@@ -13,7 +13,65 @@ namespace ASPNETCoreCookieAuthentication.Controllers
                 new ClaimsIdentity(
                     new Claim[]
                     {
-                        new Claim(ClaimTypes.NameIdentifier, Guid.NewGuid().ToString())
+                        new Claim(ClaimTypes.NameIdentifier, Guid.NewGuid().ToString()),
+                        new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
+new Claim(Guid.NewGuid().ToString(), Guid.NewGuid().ToString()),
+
                     },
                     "default"
                     )
