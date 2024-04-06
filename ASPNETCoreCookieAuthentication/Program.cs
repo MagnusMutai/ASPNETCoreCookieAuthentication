@@ -13,11 +13,17 @@ builder.Services.AddAuthentication("default")
         //o.Cookie.HttpOnly = false;
         //o.Cookie.SecurePolicy = CookieSecurePolicy.Always;
         //o.Cookie.SameSite = SameSiteMode.Lax;
-        o.ExpireTimeSpan = TimeSpan.FromSeconds(10);
-        o.SlidingExpiration = true;
+        //o.ExpireTimeSpan = TimeSpan.FromSeconds(10);
+        //o.SlidingExpiration = true;
     });
 
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(builder =>
+{
+    builder.AddPolicy("mypolicy", pb => pb
+        .RequireAuthenticatedUser()
+        .RequireClaim("doesntexist", "nonse")
+        );
+});
 
 builder.Services.AddControllers();
 
@@ -31,7 +37,7 @@ app.UseAuthorization();
 
 app.MapGet("/", () => "Hello World!");
 
-app.MapGet("/test", () => "Hello World!").RequireAuthorization();
+app.MapGet("/test", () => "Hello World!").RequireAuthorization("mypolicy");
 
 app.MapGet("/test22", async (HttpContext ctx) =>
 {
@@ -56,6 +62,17 @@ app.MapPost("/login", async (HttpContext ctx) =>
                   "default"
                )
           ),
+          new AuthenticationProperties()
+          {
+              IsPersistent = true
+          });
+    return "ok";
+});
+
+app.MapGet("/signout", async (HttpContext ctx) =>
+{
+
+    await ctx.SignOutAsync("default", 
           new AuthenticationProperties()
           {
               IsPersistent = true
